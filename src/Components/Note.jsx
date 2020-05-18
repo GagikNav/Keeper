@@ -1,10 +1,13 @@
 import React from 'react';
+import notesArray from '../notes';
+import CreateNoteCard from './CreatNoteCard';
 
 const Note = () => {
 	return (
-		<div className="note">
-			<h1>Title</h1>
-			<p>Content</p>
+		<div>
+			{notesArray.map((e) => (
+				<CreateNoteCard key={e.key} title={e.title} content={e.content} />
+			))}
 		</div>
 	);
 };
